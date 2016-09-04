@@ -79,6 +79,13 @@ namespace TechBase.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "O {0} deve ter pelo menos {2} caracteres de comprimento", MinimumLength = 6)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Nome")]
+        public string FirstName { get; set; }
+
     }
 
     public class ResetPasswordViewModel
